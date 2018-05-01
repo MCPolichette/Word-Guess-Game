@@ -1,0 +1,35 @@
+body {
+    background:black;
+    color:white;
+    text-align: "center";
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+    max-width: 700px;
+    margin:auto;
+    text-align: center;
+}
+.content{
+    max-width: 700px;
+    margin:auto;
+    text-align: center;
+}
+.guesses-left {
+    background:blue;
+}
+.directions{
+    border-style: solid;
+    border-color:yellow;
+    border-width: 2px;
+
+}
+#wrongLetters{
+    border-style: dotted;
+    border-color: red;
+    border-width:2px;
+
+}
+#under-scores{
+    color: violet;
+    font-weight: 400;
+}
