@@ -14,22 +14,24 @@ h1 {
     margin:auto;
     text-align: center;
 }
-.guesses-left {
-    background:blue;
-}
 .directions{
     border-style: solid;
     border-color:yellow;
     border-width: 2px;
 
 }
-#wrongLetters{
+#wrong_letters{
     border-style: dotted;
     border-color: red;
     border-width:2px;
+    min-height: 150px;
+    
 
 }
 #under-scores{
     color: violet;
     font-weight: 400;
+}
+#guesses_left {
+    background:blue;
 }
