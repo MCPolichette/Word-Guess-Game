@@ -20,7 +20,10 @@ h1 {
     border-width: 2px;
 
 }
-#wrong_letters{
+#trash{
+    padding:20px;
+    vertical-align: center;
+    margin-top: 20px;
     border-style: dotted;
     border-color: red;
     border-width:2px;
