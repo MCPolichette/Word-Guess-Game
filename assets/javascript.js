@@ -2,7 +2,6 @@
 
 // list of words in an Array to use for hangman game
 var wordList = [
-
     "madonna",
     "Michael Jackson",
     "Queen",
@@ -17,7 +16,6 @@ var wordList = [
     "Tina Turner",
     "ZZ Top",
     "Elton John"
-
 ];
 
 // variables I think I'll need
@@ -30,7 +28,7 @@ var displayArray = [splitLetters];
 var remainingLetters = 20;
 var wrongLetters = [];
 var splitLetters = 8
-var guess = " ";
+
 var unsolvedWord = "TEST";
 
 //Start game by on window loading
@@ -48,17 +46,16 @@ window.onload = function (gameBegins) {
     // splits the unsovledWord into individual letters and creates an underline displayArray
     var splitLetters = unsolvedWord.split('');
     for (i = 0; i < splitLetters.length; i++) {
-        displayArray[i] = "_  "
+        displayArray[i] = " _ "
     }
     // taking out the SPACES
     for (i = 0; i < splitLetters.length; i++) {
         if (splitLetters[i] === " ") {
-            (displayArray[i] = "-");
-            remainingLetters--;
-            document.getElementById("under_scores").innerHTML = (displayArray.join(" "));
+            (displayArray[i] = '&nbsp;');
+            --remainingLetters;
+            document.getElementById("under_scores").innerHTML = (displayArray.join(' '));
         }
     }
-    document.getElementById("under_scores").innerHTML = (displayArray.join(" "));
     remainingLetters = splitLetters.length;
 
     // user input event = letter 
@@ -68,7 +65,7 @@ window.onload = function (gameBegins) {
         letterChoice = letterChoice.toUpperCase();
         if (wrongLetters.indexOf(letterChoice) >= 0 || splitLetters.indexOf(letterChoice) >= 0) { }
         else {
-            guessesLeft--;
+            --guessesLeft;
             wrongLetters.push(letterChoice);
             wrongLetters.sort;
             document.getElementById("wrong_letters").innerHTML = wrongLetters.join(" ");
@@ -78,27 +75,30 @@ window.onload = function (gameBegins) {
 
             if (splitLetters[i] === letterChoice) {
                 (displayArray[i] = letterChoice + " ");
-                remainingLetters--;
+                --remainingLetters;
+                console.log("remaining", remainingLetters);
                 document.getElementById("under_scores").innerHTML = (displayArray.join(" "));
             }
         }
         document.getElementById("guesses_left").innerHTML = guessesLeft;
-
-        console.log("displayArray, output, splitLetters, ");
-        console.log("guesses left", guessesLeft, wrongLetters);
-        console.log(letterChoice, wrongLetters.length);
-        console.log(displayArray);
-        console.log("------------");
-        // WIN OR LOSE THE GAME
-        if (guessesLeft < 1) {
-            alert("YOU LOST! reload the page to try a new word");
-        }
-        if (remainingLetters === 0) {
-            alert("YOU WON!!!")
-
-        }
-
     }
+
+    console.log("guesses left", guessesLeft, wrongLetters);
+    console.log(wrongLetters.length);
+    console.log(displayArray);
+    console.log("------------");// WIN OR LOSE THE GAME
+
+    // // Function for game end
+    (guessesLeft === 0) = function (lossEnding) {
+        alert("YOU LOST! reload the page to try a new word");
+        loss++;
+    }
+
+
+        (remainingLetters === 0) = function (winEnding) {
+            win++;
+            alert("YOU WON!!!")
+        }
 }
 
 

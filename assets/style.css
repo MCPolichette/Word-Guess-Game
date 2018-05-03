@@ -2,7 +2,7 @@ body {
     background:black;
     color:white;
     text-align: "center";
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 h1 {
     max-width: 700px;
