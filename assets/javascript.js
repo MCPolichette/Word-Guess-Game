@@ -2,20 +2,36 @@
 
 // list of words in an Array to use for hangman game
 var wordList = [
-    "madonna",
-    "Michael Jackson",
-    "Queen",
-    "Prince",
-    "David Bowie",
-    "The Police",
-    "AC DC",
-    "Journey",
-    "Van Halen",
-    "Blondie",
-    "Cyndi Lauper",
-    "Tina Turner",
-    "ZZ Top",
-    "Elton John"
+    "headset",
+    "chain",
+    "bottom bracket",
+    "wheel hub",
+    "tire",
+    "fork",
+    "derailleur",
+    "brake pad",
+    "disk brake",
+    "bike frame",
+    "wheels",
+    "shifter",
+    "brake cable",
+    "shifter cable",
+    "spokes",
+    "saddle",
+    "seat tube",
+    "head tube",
+    "down tube",
+    "top tube",
+    "seat stays",
+    "suspension",
+    "chain stays",
+    "bicycle",
+    "helmet",
+    "hand grips",
+    "handle bars",
+    "pedals",
+    "cranks"
+
 ];
 
 // variables I think I'll need
@@ -88,17 +104,17 @@ window.onload = function (gameBegins) {
     console.log(displayArray);
     console.log("------------");// WIN OR LOSE THE GAME
 
-    // // Function for game end
-    (guessesLeft === 0) = function (lossEnding) {
-        alert("YOU LOST! reload the page to try a new word");
-        loss++;
-    }
+    // // // Function for game end
 
+    //     var lossEnding = function (guessesLeft === 0) {
+    //         alert("YOU LOST! reload the page to try a new word");
+    //     loss++;
+    // }
 
-        (remainingLetters === 0) = function (winEnding) {
-            win++;
-            alert("YOU WON!!!")
-        }
+    //     (remainingLetters === 0) = function (winEnding) {
+    //         win++;
+    //         alert("YOU WON!!!")
+    //     }
 }
 
 
