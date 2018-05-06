@@ -44,11 +44,19 @@ var displayArray = [splitLetters];
 var remainingLetters = 20;
 var wrongLetters = [];
 var splitLetters = 8
-
 var unsolvedWord = "TEST";
 
+function winGame() {
+    win++;
+    alert("YOU WON!!!")
+};
+function loseGame() {
+    alert("YOU LOST! reload the page to try a new word");
+    loss++;
+};
+
 //Start game by on window loading
-window.onload = function (gameBegins) {
+window.onload = function gameBegins() {
 
     // Randomly chooses a choice from the options array.
     unsolvedWord = wordList[Math.floor(Math.random() * wordList.length)];
@@ -68,11 +76,11 @@ window.onload = function (gameBegins) {
     for (i = 0; i < splitLetters.length; i++) {
         if (splitLetters[i] === " ") {
             (displayArray[i] = '&nbsp;');
-            --remainingLetters;
+            remainingLetters = remainingLetters - 1;
             document.getElementById("under_scores").innerHTML = (displayArray.join(' '));
         }
-    }
-    remainingLetters = splitLetters.length;
+    } remainingLetters = splitLetters.length;
+
 
     // user input event = letter 
     document.onkeyup = function (event) {
@@ -81,40 +89,43 @@ window.onload = function (gameBegins) {
         letterChoice = letterChoice.toUpperCase();
         if (wrongLetters.indexOf(letterChoice) >= 0 || splitLetters.indexOf(letterChoice) >= 0) { }
         else {
-            --guessesLeft;
+            guessesLeft = guessesLeft - 1;
             wrongLetters.push(letterChoice);
-            wrongLetters.sort;
+            wrongLetters.sort();
             document.getElementById("wrong_letters").innerHTML = wrongLetters.join(" ");
         }
+        // if letter matches in word - write it down
         for (i = 0; i < splitLetters.length; i++) {
-            // if letter matches in word - write it down
-
             if (splitLetters[i] === letterChoice) {
                 (displayArray[i] = letterChoice + " ");
-                --remainingLetters;
+                remainingLetters - remainingLetters - 1;
                 console.log("remaining", remainingLetters);
                 document.getElementById("under_scores").innerHTML = (displayArray.join(" "));
             }
         }
         document.getElementById("guesses_left").innerHTML = guessesLeft;
+        if (remainingLetters <= 0) {
+            winGame()
+            gameBegins()
+            win = win + win;
+        }
+        if (guessesLeft <= 0) {
+            loseGame();
+            loss--;
+        }
+
     }
 
     console.log("guesses left", guessesLeft, wrongLetters);
     console.log(wrongLetters.length);
     console.log(displayArray);
-    console.log("------------");// WIN OR LOSE THE GAME
+    console.log("------------");
+
+    // WIN OR LOSE THE GAME
 
     // // // Function for game end
 
-    //     var lossEnding = function (guessesLeft === 0) {
-    //         alert("YOU LOST! reload the page to try a new word");
-    //     loss++;
-    // }
 
-    //     (remainingLetters === 0) = function (winEnding) {
-    //         win++;
-    //         alert("YOU WON!!!")
-    //     }
 }
 
 
