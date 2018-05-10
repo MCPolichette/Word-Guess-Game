@@ -85,6 +85,7 @@ window.onload = function gameBegins() {
     // user input event = letter 
     document.onkeyup = function (event) {
         // check if letters has been typed already
+
         var letterChoice = (event.key);
         letterChoice = letterChoice.toUpperCase();
         if (wrongLetters.indexOf(letterChoice) >= 0 || splitLetters.indexOf(letterChoice) >= 0) { }
@@ -104,13 +105,16 @@ window.onload = function gameBegins() {
             }
         }
         document.getElementById("guesses_left").innerHTML = guessesLeft;
-        if (remainingLetters <= 0) {
+
+        // end game protocalls.... Not working........  i treid triggering them.. not  sure
+        if (remainingLetters = 0) {
             winGame()
             gameBegins()
             win = win + win;
         }
-        if (guessesLeft <= 0) {
+        if (guessesLeft = 0) {
             loseGame();
+            gameBegins();
             loss--;
         }
 

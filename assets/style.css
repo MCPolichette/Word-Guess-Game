@@ -2,7 +2,7 @@ body {
     background:black;
     color:white;
     text-align: "center";
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 h1 {
     max-width: 700px;
@@ -15,21 +15,23 @@ h1 {
     text-align: center;
 }
 .directions{
+    
     border-style: solid;
     border-color:yellow;
     border-width: 2px;
     width:300px;
-    /* float: left;
-    margin-top: 20px;
+    
+    float: left;
+    margin-top: 20px;/* 
     min-height: 200px;
     background-color: #cccccc;
     background-image: linear-gradient(black, maroon); */
 }
 #trash{
-    /* float: left;
+    float: left;
     background-color: #cccccc;
     background-image: linear-gradient(black, maroon);
-    padding:20px; */
+    padding:20px;
     vertical-align: center;
     margin-top: 20px;
     border-style: dotted;

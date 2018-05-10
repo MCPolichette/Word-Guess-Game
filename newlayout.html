@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mark's Hangman Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css" /> -->
+    <script src="assets/javascript.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4 text-center">Bicycle Parts Hangman Game</h1>
+            <p class="lead text-center">A lesson in Javascript</p>
+            <p>To begin the game, start typing letters, to figure out the word!</p>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Wrong Letters
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" id="wrong_letters"></h5>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Total games played:
+                            <p> </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4">
+                    <h1 class="alert alert-danger text-center w-100 h-75" id="under_scores" role="alert">
+                        Guess Me
+                    </h1>
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Score:
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Guesses left: (soon to be overall score)</h5>
+                            <p class="card-text" id="guesses_left">G</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <h1> BYCICLE PARTS - WORD GUESSING GAME</h1>
+    <div class="content">
+
+
+        <h2>Your Word:</h2>
+        <h1 id="under_scores">
+            <strong>UNDER SCORES GO HERE</strong>
+        </h1>
+        <div class="big box">
+            <div class="directions">
+                <h3> Directions:</h3>
+                <h4>
+                </h4>
+
+            </div>
+            <div id="trash">WRONG LETTERS
+                <p id="wrong_letters">
+                </p>
+            </div>
+        </div>
+        <div class=s cores>
+            <p id="test"> Guesses :
+            </p>
+            <p id="guesses_left"> guesses
+            </p>
+
+        </div>
+    </div> -->
+</body>
+
+</html>
