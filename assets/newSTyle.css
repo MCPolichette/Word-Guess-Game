@@ -1,0 +1,23 @@
+body{
+    background-image: url(../assets/images/background.jpg) !important;
+    background-repeat: repeat; 
+    
+
+}
+.jumbotron{
+    border-width:4px;
+    color: yellow;
+    text-shadow: black 0.4em 0.4em 0.4em;
+
+    font-family: 'Trade Winds', cursive;
+    margin-top:40px;
+    background-image: url(../assets/images/tools_and_bench.jpg);
+    background-size:cover;
+    background-repeat:none;
+
+}
+.card{color:maroon;
+    text-shadow: black 0 0 0;
+
+    font-family: 'Trade Winds', cursive;
+}

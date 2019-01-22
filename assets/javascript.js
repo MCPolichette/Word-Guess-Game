@@ -54,7 +54,18 @@ function loseGame() {
     alert("YOU LOST! reload the page to try a new word");
     loss++;
 };
-
+function winLose() {
+    if (remainingLetters = 0) {
+        winGame()
+        gameBegins()
+        win = win + win;
+    }
+    if (guessesLeft = 0) {
+        loseGame();
+        gameBegins();
+        loss--;
+    }
+}
 //Start game by on window loading
 window.onload = function gameBegins() {
 
@@ -105,18 +116,9 @@ window.onload = function gameBegins() {
             }
         }
         document.getElementById("guesses_left").innerHTML = guessesLeft;
+        winLose();
 
         // end game protocalls.... Not working........  i treid triggering them.. not  sure
-        if (remainingLetters = 0) {
-            winGame()
-            gameBegins()
-            win = win + win;
-        }
-        if (guessesLeft = 0) {
-            loseGame();
-            gameBegins();
-            loss--;
-        }
 
     }
 
