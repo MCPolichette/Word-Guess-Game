@@ -65,9 +65,9 @@ function winLose() {
         gameBegins();
         loss--;
     }
-}
+};
 //Start game by on window loading
-window.onload = function gameBegins() {
+function gameBegins() {
 
     // Randomly chooses a choice from the options array.
     unsolvedWord = wordList[Math.floor(Math.random() * wordList.length)];
@@ -133,5 +133,5 @@ window.onload = function gameBegins() {
 
 
 }
-
+window.onload = gameBegins();
 
