@@ -1,38 +1,7 @@
 
 
 // list of words in an Array to use for hangman game
-var wordList = [
-    "headset",
-    "chain",
-    "bottom bracket",
-    "wheel hub",
-    "tire",
-    "fork",
-    "derailleur",
-    "brake pad",
-    "disk brake",
-    "bike frame",
-    "wheels",
-    "shifter",
-    "brake cable",
-    "shifter cable",
-    "spokes",
-    "saddle",
-    "seat tube",
-    "head tube",
-    "down tube",
-    "top tube",
-    "seat stays",
-    "suspension",
-    "chain stays",
-    "bicycle",
-    "helmet",
-    "hand grips",
-    "handle bars",
-    "pedals",
-    "cranks"
-
-];
+var wordList = ["headset", "chain", "bottom bracket", "wheel hub", "tire", "fork", "derailleur", "brake pad", "disk brake", "bike frame", "wheels", "shifter", "brake cable", "shifter cable", "spokes", "saddle", "seat tube", "head tube", "down tube", "top tube", "seat stays", "suspension", "chain stays", "bicycle", "helmet", "hand grips", "handle bars", "pedals", "cranks"];
 
 // variables I think I'll need
 var win = 0;
@@ -58,12 +27,12 @@ function winLose() {
     if (remainingLetters = 0) {
         winGame()
         gameBegins()
-        win = win + win;
+        win = win + 1;
     }
     if (guessesLeft = 0) {
         loseGame();
         gameBegins();
-        loss--;
+        loss++;
     }
 };
 //Start game by on window loading
@@ -75,10 +44,12 @@ function gameBegins() {
 
     // game mechanices set up
     document.getElementById("guesses_left").innerHTML = guessesLeft;
-
-    // document.getElementById("wrong_letters").innerHTML = wrongLetter;
+    guessesLeft = 12;
+    wrongLetters = [];
 
     // splits the unsovledWord into individual letters and creates an underline displayArray
+
+
     var splitLetters = unsolvedWord.split('');
     for (i = 0; i < splitLetters.length; i++) {
         displayArray[i] = " _ "
@@ -91,7 +62,6 @@ function gameBegins() {
             document.getElementById("under_scores").innerHTML = (displayArray.join(' '));
         }
     } remainingLetters = splitLetters.length;
-
 
     // user input event = letter 
     document.onkeyup = function (event) {
@@ -119,19 +89,18 @@ function gameBegins() {
         winLose();
 
         // end game protocalls.... Not working........  i treid triggering them.. not  sure
-
+        console.log("guesses left", guessesLeft, wrongLetters);
+        console.log(wrongLetters.length);
+        console.log(displayArray);
+        console.log("------------");
     }
+};
 
-    console.log("guesses left", guessesLeft, wrongLetters);
-    console.log(wrongLetters.length);
-    console.log(displayArray);
-    console.log("------------");
+// WIN OR LOSE THE GAME
 
-    // WIN OR LOSE THE GAME
-
-    // // // Function for game end
+// // // Function for game end
 
 
-}
+
 window.onload = gameBegins();
 
